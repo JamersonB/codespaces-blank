@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>North Star Bakery | Contact and Pre Orders</title>
+</head>
+<body>
+  <header>
+    <img src="assets/bakery-logo.png" alt="North Star Bakery">
+    <h1>Contact Us or Plan a Pickup</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Our Products</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="contact.html">Contact and Pre Orders</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <p>Tell us what you’re looking for. We’ll follow up to confirm availability, pricing, and pickup details. Submitting this sample form does not place or confirm an order.</p>
+    <form action="#" method="get">
+      <fieldset>
+        <legend>Your contact details</legend>
+        <p><label for="name">Name</label><br><input id="name" name="name" type="text" autocomplete="name" required></p>
+        <p><label for="email">Email address</label><br><input id="email" name="email" type="email" autocomplete="email" required></p>
+      </fieldset>
+      <fieldset>
+        <legend>About your request</legend>
+        <p><label for="request-type">Request type</label><br>
+          <select id="request-type" name="request-type" required>
+            <option value="">Choose one</option>
+            <option value="pre-order">Pre order</option>
+            <option value="question">General question</option>
+          </select>
+        </p>
+        <p><label for="pickup-date">Preferred pickup date</label><br><input id="pickup-date" name="pickup-date" type="date" required></p>
+        <p><label for="items">Items and quantities</label><br><textarea id="items" name="items" rows="4" required placeholder="For example: two sourdough loaves and a dozen pastries"></textarea></p>
+        <p><label for="allergies">Allergy notes (optional)</label><br><textarea id="allergies" name="allergies" rows="3" placeholder="Tell us about allergies or ingredient questions"></textarea></p>
+      </fieldset>
+      <p><button type="submit">Send request</button></p>
+    </form>
+    <section>
+      <h2>Hours and location</h2>
+      <p>Hours: [Add the bakery’s current hours]</p>
+      <p>Address: [Add the bakery’s verified street address and neighborhood]</p>
+      <p>Phone: [Add the bakery’s verified phone number]</p>
+    </section>
+  </main>
+  <footer><p>North Star Bakery | We look forward to helping with your next gathering.</p></footer>
+</body>
+</html>
