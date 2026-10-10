@@ -1,0 +1,167 @@
+/* North Star Bakery: warm, readable styles shared by every page. */
+:root {
+  color-scheme: light;
+  --cream: #fbf6ec;
+  --paper: #fffdf8;
+  --ink: #34251f;
+  --muted: #67564c;
+  --brick: #a44731;
+  --brick-dark: #773321;
+  --gold: #d79a48;
+  --line: #e7d8c3;
+  --shadow: 0 12px 32px rgb(67 43 28 / 9%);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+img, picture, audio { max-width: 100%; }
+img { display: block; height: auto; }
+
+a { color: var(--brick-dark); text-decoration-thickness: .08em; text-underline-offset: .18em; }
+a:hover { color: var(--brick); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+header {
+  padding: 1.25rem 1rem 1.5rem;
+  background: var(--paper);
+  border-bottom: 4px solid var(--gold);
+  text-align: center;
+}
+
+header > img {
+  width: min(8rem, 35vw);
+  max-height: 7rem;
+  margin: 0 auto .6rem;
+  object-fit: contain;
+}
+
+h1, h2, h3 {
+  color: var(--brick-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+}
+
+h1 { margin: .35rem 0 1rem; font-size: clamp(2rem, 7vw, 3.25rem); }
+h2 { margin: 0 0 .75rem; font-size: clamp(1.45rem, 4vw, 2rem); }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 1rem; }
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  padding: .55rem .8rem;
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: .95rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav a:hover, nav a:focus-visible { background: var(--cream); color: var(--brick-dark); }
+
+main {
+  width: min(100% - 2rem, 68rem);
+  margin: 2rem auto 3rem;
+}
+
+main > p:first-child { max-width: 48rem; margin: 0 auto 1.5rem; color: var(--muted); font-size: 1.08rem; }
+
+main > section {
+  margin: 1.25rem 0;
+  padding: clamp(1.15rem, 4vw, 2rem);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+main > section img { width: 100%; max-height: 28rem; margin: 1rem 0; border-radius: .8rem; object-fit: cover; }
+main > section picture img { max-height: 32rem; }
+figure { margin: 1.25rem 0 0; }
+figure img { border-radius: .8rem; }
+figcaption { margin-top: .6rem; color: var(--muted); font-size: .95rem; }
+audio { display: block; width: 100%; margin: 1rem 0 .25rem; }
+
+form {
+  margin: 1.5rem 0 2rem;
+  padding: clamp(1rem, 4vw, 1.75rem);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+fieldset { min-width: 0; margin: 0 0 1.25rem; padding: 1rem; border: 1px solid var(--line); border-radius: .75rem; }
+legend { padding: 0 .4rem; color: var(--brick-dark); font-family: Georgia, "Times New Roman", serif; font-size: 1.2rem; font-weight: 700; }
+label { display: inline-block; margin-bottom: .25rem; font-weight: 700; }
+input, select, textarea {
+  width: 100%;
+  min-height: 2.9rem;
+  padding: .65rem .75rem;
+  border: 1px solid #bba994;
+  border-radius: .45rem;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+textarea { min-height: 7rem; resize: vertical; }
+button {
+  min-height: 3rem;
+  padding: .7rem 1.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--brick);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+button:hover { background: var(--brick-dark); }
+
+footer {
+  padding: 1.25rem 1rem;
+  border-top: 4px solid var(--gold);
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+}
+footer p { margin: 0; }
+
+@media (min-width: 48rem) {
+  header { padding: 1.5rem 2rem 1.75rem; }
+  nav ul { gap: .75rem; }
+  nav a { padding: .6rem 1rem; }
+  main { margin-top: 2.75rem; }
+  main > section { margin: 1.5rem 0; }
+  main > section img { max-height: 25rem; }
+  form { padding: 2rem; }
+  fieldset { padding: 1.25rem; }
+}
+
+@media (min-width: 64rem) {
+  main > section { padding: 2.25rem; }
+}
