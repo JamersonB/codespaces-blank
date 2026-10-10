@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>North Star Bakery | Contact and Pre Orders</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
+<body data-page="contact">
   <header>
     <img src="assets/bakery-logo.png" alt="North Star Bakery">
     <h1>Contact Us or Plan a Pickup</h1>
@@ -15,36 +16,60 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html">Our Products</a></li>
         <li><a href="about.html">Our Story</a></li>
-        <li><a href="contact.html">Contact and Pre Orders</a></li>
+        <li><a href="contact.html" aria-current="page">Contact and Pre Orders</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <p>Tell us what you’re looking for. We’ll follow up to confirm availability, pricing, and pickup details. Submitting this sample form does not place or confirm an order.</p>
-    <form action="#" method="get">
+    <p>Tell us what you’re looking for. We’ll follow up to confirm availability, pricing, and pickup details. This sample form checks your entries in the browser but does not transmit or confirm an order.</p>
+    <p id="saved-order-notice" class="status-message" role="status" aria-live="polite"></p>
+    <form id="preorder-form" action="#" method="post" novalidate>
       <fieldset>
         <legend>Your contact details</legend>
-        <p><label for="name">Name</label><br><input id="name" name="name" type="text" autocomplete="name" required></p>
-        <p><label for="email">Email address</label><br><input id="email" name="email" type="email" autocomplete="email" required></p>
+        <p>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+          <small id="name-error" class="form-error" aria-live="polite"></small>
+        </p>
+        <p>
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+          <small id="email-error" class="form-error" aria-live="polite"></small>
+        </p>
       </fieldset>
       <fieldset>
         <legend>About your request</legend>
-        <p><label for="request-type">Request type</label><br>
-          <select id="request-type" name="request-type" required>
+        <p>
+          <label for="request-type">Request type</label>
+          <select id="request-type" name="request-type" required aria-describedby="request-type-error">
             <option value="">Choose one</option>
-            <option value="pre-order">Pre order</option>
+            <option value="pre-order">Pre-order</option>
             <option value="question">General question</option>
           </select>
+          <small id="request-type-error" class="form-error" aria-live="polite"></small>
         </p>
-        <p><label for="pickup-date">Preferred pickup date</label><br><input id="pickup-date" name="pickup-date" type="date" required></p>
-        <p><label for="items">Items and quantities</label><br><textarea id="items" name="items" rows="4" required placeholder="For example: two sourdough loaves and a dozen pastries"></textarea></p>
-        <p><label for="allergies">Allergy notes (optional)</label><br><textarea id="allergies" name="allergies" rows="3" placeholder="Tell us about allergies or ingredient questions"></textarea></p>
+        <p>
+          <label for="pickup-date">Preferred pickup date</label>
+          <input id="pickup-date" name="pickup-date" type="date" required aria-describedby="pickup-date-error">
+          <small id="pickup-date-error" class="form-error" aria-live="polite"></small>
+        </p>
+        <p>
+          <label for="items">Items and quantities</label>
+          <textarea id="items" name="items" rows="4" required placeholder="For example: two sourdough loaves and a dozen pastries" aria-describedby="items-error"></textarea>
+          <small id="items-error" class="form-error" aria-live="polite"></small>
+        </p>
+        <p>
+          <label for="allergies">Allergy notes (optional)</label>
+          <textarea id="allergies" name="allergies" rows="3" maxlength="300" placeholder="Tell us about allergies or ingredient questions" aria-describedby="allergies-error"></textarea>
+          <small id="allergies-error" class="form-error" aria-live="polite"></small>
+        </p>
       </fieldset>
-      <p><button type="submit">Send request</button></p>
+      <p><button type="submit">Check request</button></p>
+      <p id="form-status" class="status-message" role="status" aria-live="polite"></p>
     </form>
     <section>
       <h2>Hours and location</h2>
-      <p>Hours: 07:00 am to 07:00 pm </p>
+      <p>Hours: 07:00 am to 07:00 pm</p>
       <p>Address: Address</p>
       <p>Phone: phone number</p>
     </section>

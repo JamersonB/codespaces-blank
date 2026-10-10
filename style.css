@@ -165,3 +165,39 @@ footer p { margin: 0; }
 @media (min-width: 64rem) {
   main > section { padding: 2.25rem; }
 }
+
+/* Touchstone 4: pickup-list controls and field-level form feedback. */
+.order-builder > label { margin-top: .5rem; }
+.order-builder > input[type="search"] { margin: .25rem 0 1rem; }
+.product-grid { display: grid; gap: 1rem; margin: 1rem 0 1.5rem; padding: 0; list-style: none; }
+.product-card { min-width: 0; padding: 1rem; border: 1px solid var(--line); border-radius: .8rem; background: #fff; }
+.product-card h3 { margin: .2rem 0 .5rem; }
+.product-card p { margin-bottom: .65rem; }
+.product-category { color: var(--brick); font-size: .85rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.product-price { color: var(--muted); font-weight: 700; }
+.product-controls { display: flex; flex-wrap: wrap; align-items: end; gap: .75rem; margin-top: .9rem; }
+.product-controls label { margin: 0; }
+.product-controls input { display: block; width: 6.5rem; min-height: 3rem; margin-top: .25rem; }
+.product-empty { padding: .75rem; color: var(--muted); }
+.order-summary { padding: 1rem; border-radius: .8rem; background: var(--cream); }
+.order-summary h3 { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem; margin: 0 0 .75rem; }
+#order-count { color: var(--muted); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: .95rem; font-weight: 700; }
+#saved-order-list { margin: 0 0 1rem; padding: 0; list-style: none; }
+#saved-order-list li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .6rem; padding: .6rem 0; border-bottom: 1px solid var(--line); }
+.remove-order-item { min-height: 2.4rem; padding: .35rem .8rem; background: var(--brick-dark); font-size: .9rem; }
+.order-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+.button-link { display: inline-block; padding: .65rem 1rem; border-radius: 999px; background: var(--brick); color: #fff; font-weight: 700; text-decoration: none; }
+.button-link:hover { background: var(--brick-dark); color: #fff; }
+.status-message { color: var(--brick-dark); font-weight: 700; }
+.form-error { display: block; min-height: 1.2em; margin-top: .2rem; color: #8b241d; font-size: .92rem; font-weight: 700; }
+.form-error:empty { display: none; }
+[aria-invalid="true"] { border-color: #8b241d; }
+
+@media (min-width: 48rem) {
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .order-summary { padding: 1.5rem; }
+}
+
+@media (min-width: 64rem) {
+  .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

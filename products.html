@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>North Star Bakery | Products</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
+<body data-page="products">
   <header>
     <img src="assets/bakery-logo.png" alt="North Star Bakery">
     <h1>Fresh from Our Oven</h1>
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Our Products</a></li>
+        <li><a href="products.html" aria-current="page">Our Products</a></li>
         <li><a href="about.html">Our Story</a></li>
         <li><a href="contact.html">Contact and Pre Orders</a></li>
       </ul>
@@ -21,6 +22,25 @@
   </header>
   <main>
     <p>Our selection changes with the day. The ranges below are planning estimates; contact us for current prices, availability, and celebration cake details.</p>
+
+    <section class="order-builder" aria-labelledby="pickup-list-heading">
+      <h2 id="pickup-list-heading">Plan a pickup</h2>
+      <p>Choose items and quantities to build a list for your inquiry. Prices are estimates; the bakery will confirm availability and cost. This is not checkout.</p>
+      <label for="product-search">Find an item</label>
+      <input id="product-search" type="search" placeholder="Try bread, pastry, or cake">
+      <ul id="product-list" class="product-grid" aria-label="Bakery items"></ul>
+      <div class="order-summary" aria-labelledby="saved-list-heading">
+        <h3 id="saved-list-heading">Your saved pickup list <span id="order-count">0 items</span></h3>
+        <p id="empty-order-message">Your list is empty. Add an item above to start planning.</p>
+        <ul id="saved-order-list"></ul>
+        <div class="order-actions">
+          <button id="clear-order" type="button" hidden>Clear list</button>
+          <a class="button-link" href="contact.html#items">Continue to the contact form</a>
+        </div>
+        <p id="order-status" class="status-message" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
     <section>
       <h2>Breads</h2>
       <img src="assets/bakery-bread.png" alt="Crusty artisan bread baked fresh at North Star Bakery">
@@ -38,7 +58,7 @@
         <figcaption>Our Signature Loaf: a deeply browned crust with a soft, open crumb, made for passing around the table.</figcaption>
       </figure>
     </section>
-    <p>Planning ahead? <a href="contact.html">Send a pre order request</a>; we’ll confirm availability and pickup details.</p>
+    <p>Planning ahead? <a href="contact.html#items">Send a pre-order request</a>; we’ll confirm availability and pickup details.</p>
   </main>
   <footer><p>North Star Bakery | address and phone number</p></footer>
 </body>
